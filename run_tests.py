@@ -1,9 +1,7 @@
 import argparse
 import re
-import shutil
 import unittest
 from io import StringIO
-import inspect
 
 from ed_utils.json_test_runner import JSONTestRunner
 
@@ -34,10 +32,6 @@ if __name__ == "__main__":
         action="store_true",
     )
     args = p.parse_args()
-
-    # Remove student test dirs
-    # shutil.rmtree("test", ignore_errors=True)
-    # shutil.rmtree("tests", ignore_errors=True)
 
     suite = unittest.defaultTestLoader.discover('.')
     for s in suite:
