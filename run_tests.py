@@ -33,7 +33,7 @@ if __name__ == "__main__":
     )
     args = p.parse_args()
 
-    suite = unittest.defaultTestLoader.discover('.')
+    suite = unittest.defaultTestLoader.discover('test_actual' if args.for_ed else '.')
     for s in suite:
         for t in s:
             if "FailedTest" in str(type(t)):
